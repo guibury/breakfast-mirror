@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Breakfast Mirror</string>
+    <string name="person_of_the_next_week_title" >Próximo a trazer:</string>
+    <string name="person_of_the_next_week">Thales</string>
+    <string name="person_of_the_week_title" >Pessoa da semana:</string>
+    <string name="person_of_the_week">Gustavo</string>
+    <string name="text_to_button_view" >Votar</string>
+    <string name="realized_vote" >Voto realizado com sucesso</string>
+</resources>
