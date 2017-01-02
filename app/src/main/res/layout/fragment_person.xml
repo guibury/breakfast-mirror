@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_person"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jovensprofissionais.breakfastitismytreat.fragments.PersonFragment">
+
+    <TextView
+        android:id="@+id/personOfTheNextWeekTitle"
+        android:layout_toStartOf="@+id/personOfTheNextWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/person_of_the_next_week_title" />
+
+    <TextView
+        android:id="@+id/personOfTheNextWeek"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/person_of_the_next_week" />
+
+    <TextView
+        android:id="@+id/personOfTheWeekTitle"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/person_of_the_week_title"
+        android:layout_above="@+id/personOfTheWeek"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/personOfTheWeek"
+        android:textSize="45sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/person_of_the_week" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:layout_above="@+id/voteButton"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/RatingBar"/>
+
+    <Button android:id="@+id/voteButton"
+        android:text="@string/text_to_button_view"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
