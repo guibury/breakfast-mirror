@@ -11,8 +11,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.jovensprofissionais.breakfastitismytreat.fragments.PersonFragment;
-import com.jovensprofissionais.breakfastitismytreat.fragments.RankFragment;
+import com.jovensprofissionais.breakfastitismytreat.fragment.PersonFragment;
+import com.jovensprofissionais.breakfastitismytreat.fragment.RankFragment;
 
 import java.util.ArrayList;
 import java.util.List;

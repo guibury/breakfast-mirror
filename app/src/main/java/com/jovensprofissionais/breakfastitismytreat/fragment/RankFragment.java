@@ -1,4 +1,4 @@
-package com.jovensprofissionais.breakfastitismytreat.fragments;
+package com.jovensprofissionais.breakfastitismytreat.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.R;
 
 /**
@@ -27,7 +28,8 @@ public class RankFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child("");
+
+        databaseReference.child(Constant.RANKING_TABLE);
     }
 
     @Override

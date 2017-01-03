@@ -1,4 +1,4 @@
-package com.jovensprofissionais.breakfastitismytreat.fragments;
+package com.jovensprofissionais.breakfastitismytreat.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.R;
 import com.jovensprofissionais.breakfastitismytreat.controller.RankingDBController;
 
@@ -27,6 +30,8 @@ public class PersonFragment extends Fragment implements OnClickListener {
     RankingDBController rankingDBController;
     TextView personOfTheWeek;
     RatingBar ratingBar;
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
         if(ratingBar.getProgress() > 0) {
             rankingDBController.insert(personOfTheWeek.getText().toString(),ratingBar.getProgress());
 
+            databaseReference.child(Constant.RANKING_TABLE).setValue(ratingBar.getProgress());
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {

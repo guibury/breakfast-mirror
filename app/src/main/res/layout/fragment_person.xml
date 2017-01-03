@@ -7,7 +7,7 @@
      android:paddingLeft="@dimen/activity_horizontal_margin"
      android:paddingRight="@dimen/activity_horizontal_margin"
      android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jovensprofissionais.breakfastitismytreat.fragments.PersonFragment">
+    tools:context="com.jovensprofissionais.breakfastitismytreat.fragment.PersonFragment">
     <TextView
         android:id="@+id/personOfTheNextWeekTitle"
         android:layout_toStartOf="@+id/personOfTheNextWeek"
