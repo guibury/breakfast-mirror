@@ -1,16 +1,21 @@
 package com.jovensprofissionais.breakfastitismytreat;
 
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.jovensprofissionais.breakfastitismytreat.controller.RankingDBController;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.jovensprofissionais.breakfastitismytreat.fragments.PersonFragment;
+import com.jovensprofissionais.breakfastitismytreat.fragments.RankFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 //App icon made by Kitchenware from www.flaticon.com
 
 /**
@@ -21,25 +26,77 @@ import com.jovensprofissionais.breakfastitismytreat.fragments.PersonFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button voteButton;
-    RankingDBController rankingDBController;
-    TextView personOfTheWeek;
-    RatingBar ratingBar;
+
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private DatabaseReference mDatabase;
+//    Button voteButton;
+//    RankingDBController rankingDBController;
+//    TextView personOfTheWeek;
+//    RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Fragment fragment = new PersonFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_person, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
 
-     //   rankingDBController = new RankingDBController(getBaseContext());
-     //   voteButton = (Button) findViewById(R.id.voteButton);
-     //   personOfTheWeek = (TextView) findViewById(R.id.personOfTheWeek);
-     //   ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-     //   voteButton.setOnClickListener(voteHandler);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+//      rankingDBController = new RankingDBController(getBaseContext());
+//      voteButton = (Button) findViewById(R.id.voteButton);
+//      personOfTheWeek = (TextView) findViewById(R.id.personOfTheWeek);
+//      ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+
+//      voteButton.setOnClickListener(voteHandler);
+    }
+
+
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new PersonFragment(), "PESSOA");
+        adapter.addFragment(new RankFragment(), "CLASSIFICAÇÃO");
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 
 //    View.OnClickListener voteHandler = new OnClickListener() {
