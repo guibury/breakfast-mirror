@@ -5,5 +5,3 @@ The people always joke about who's turn it is to bring something and how good wa
 So we decided to make it "official" with an app that will show to everybody who is turn.
 
 As we all like Black Mirror, we also decided give possibility to rate the last breakfast.
-
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
