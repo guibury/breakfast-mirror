@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "281456352519",
+    "firebase_url": "https://breakfastmirror.firebaseio.com",
+    "project_id": "breakfastmirror",
+    "storage_bucket": "breakfastmirror.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281456352519:android:20d17c1acf2bc61c",
+        "android_client_info": {
+          "package_name": "com.jovensprofissionais.breakfastitismytreat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281456352519-u462lu26ku9e3fhs1ffb7769mj259mlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaADRtDmE_kzKFjut9oNGH-8YfAVAhRDc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
