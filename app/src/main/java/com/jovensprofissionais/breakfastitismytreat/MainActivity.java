@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PersonFragment(), "PESSOA");
         adapter.addFragment(new RankFragment(), "CLASSIFICAÇÃO");
+        //lock swipe to change fragment
+        viewPager.beginFakeDrag();
+
         viewPager.setAdapter(adapter);
     }
 

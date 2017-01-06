@@ -1,7 +1,7 @@
-#Fri Jan 06 00:48:12 BRST 2017
-base.0=/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f570d428e8d730709e5eee23b3d31325017e1a74
+#Fri Jan 06 10:04:48 BRST 2017
+base.0=/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f3df4eb69354c02427e62926b99ee990b70664a8
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c078998380eb00f43d53dca72c4a2e7f6a90fd73/classes.dex
-base.1=/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c078998380eb00f43d53dca72c4a2e7f6a90fd73
-file.0=/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f570d428e8d730709e5eee23b3d31325017e1a74/classes.dex
+file.1=/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a31f65b66e2e5ee7b48b6b802ba4fa057ab05185/classes.dex
+base.1=/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a31f65b66e2e5ee7b48b6b802ba4fa057ab05185
+file.0=/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f3df4eb69354c02427e62926b99ee990b70664a8/classes.dex
