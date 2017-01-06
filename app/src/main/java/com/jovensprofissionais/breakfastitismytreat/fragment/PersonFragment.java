@@ -89,9 +89,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
-
             databaseReference.child(Constant.PEOPLE).child(Constant.ID_ERNEST).child(Constant.RATE).setValue(ratingBar.getProgress());
-
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.not_realized_vote, Toast.LENGTH_LONG).show();

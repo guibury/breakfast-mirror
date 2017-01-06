@@ -12,7 +12,7 @@ public class Constant {
     public static final String PEOPLE = "people";
     public static final String NAME = "name";
     public static final String RATE = "rate";
-
     public static final String ID_ERNEST = "0";
-
+    public static final String FRAGMENT_PERSON = "PESSOA";
+    public static final String FRAGMENT_RANK = "CLASSIFICAÇÃO";
 }

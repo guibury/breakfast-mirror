@@ -5,32 +5,49 @@
     density="hdpi"
     format="8"
     plugin-version="2.2.3"
+<<<<<<< HEAD
     timestamp="3723288521761"
     token="2164880882761445077"
+=======
+    timestamp="5856947347757"
+    token="-4387565184461958414"
+>>>>>>> 220ef47ff7168a1b7e3f9727d3119b7fc1090be9
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
+<<<<<<< HEAD
         duration="119" />
+=======
+        duration="590" />
+>>>>>>> 220ef47ff7168a1b7e3f9727d3119b7fc1090be9
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
+<<<<<<< HEAD
         duration="31" />
+=======
+        duration="445" />
+>>>>>>> 220ef47ff7168a1b7e3f9727d3119b7fc1090be9
     <task
         name="verifier"
         duration="1" />
 
     <artifact
-        location="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/outputs/apk/app-debug.apk"
+        location="/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
+<<<<<<< HEAD
         timestamp="3723288521761"
+=======
+        timestamp="5856947347757"
+>>>>>>> 220ef47ff7168a1b7e3f9727d3119b7fc1090be9
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/outputs/apk/app-debug.apk"
+            location="/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 
