@@ -52,10 +52,10 @@ public class PersonFragment extends Fragment implements OnClickListener {
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child("peps").addChildEventListener(new ChildEventListener() {
+        databaseReference.child(Constant.RANKING).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), (String) dataSnapshot.child("name").getValue() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), (String) dataSnapshot.child(Constant.NAME).getValue() , Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -86,7 +86,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if(ratingBar.getProgress() > 0) {
 
-            databaseReference.child("peps").push().child("name").setValue(personOfTheWeek.getText().toString());
+            databaseReference.child(Constant.RANKING).push().child(Constant.NAME).setValue(personOfTheWeek.getText().toString());
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
