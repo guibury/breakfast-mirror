@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.fragment.PersonFragment;
 import com.jovensprofissionais.breakfastitismytreat.fragment.RankFragment;
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
 //      rankingDBController = new RankingDBController(getBaseContext());
 //      voteButton = (Button) findViewById(R.id.voteButton);
@@ -65,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new PersonFragment(), "PESSOA");
-        adapter.addFragment(new RankFragment(), "CLASSIFICAÇÃO");
+        adapter.addFragment(new PersonFragment(), Constant.FRAGMENT_PERSON);
+        adapter.addFragment(new RankFragment(), Constant.FRAGMENT_RANK);
         //lock swipe to change fragment
         viewPager.beginFakeDrag();
 

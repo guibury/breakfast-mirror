@@ -103,10 +103,10 @@ public class PersonFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
 
-           UserRating userRating = new UserRating(databaseReference.child(Constant.RANKING).push().getKey()
-                    ,personOfTheWeek.getText().toString(), ratingBar.getProgress());
-            userRating.incTotalTimesVoted();
-            databaseReference.child(Constant.RANKING).child(userRating.getId()).setValue(userRating);
+//           UserRating userRating = new UserRating(databaseReference.child(Constant.RANKING).push().getKey()
+//                    ,personOfTheWeek.getText().toString(), ratingBar.getProgress());
+//            userRating.incTotalTimesVoted();
+//            databaseReference.child(Constant.RANKING).child(userRating.getId()).setValue(userRating);
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {

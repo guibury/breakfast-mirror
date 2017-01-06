@@ -13,4 +13,6 @@ public class Constant {
     public static final String NAME = "name";
     public static final String RATE = "rate";
 
+    public static final String FRAGMENT_PERSON = "PESSOA";
+    public static final String FRAGMENT_RANK = "CLASSIFICAÇÃO";
 }
