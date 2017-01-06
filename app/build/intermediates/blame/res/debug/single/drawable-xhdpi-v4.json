@@ -208,12 +208,12 @@
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_dark_normal.9.png",

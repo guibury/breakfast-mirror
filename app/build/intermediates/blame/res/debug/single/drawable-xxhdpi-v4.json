@@ -236,12 +236,12 @@
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png",
-        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal.9.png",
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal.9.png"
+    },
+    {
+        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png",
+        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",

@@ -29,12 +29,14 @@ import com.jovensprofissionais.breakfastitismytreat.entity.UserRating;
  */
 public class PersonFragment extends Fragment implements OnClickListener {
 
-    Button voteButton;
-    RankingDBController rankingDBController;
-    TextView personOfTheWeek;
-    RatingBar ratingBar;
+    private Button voteButton;
+    private RankingDBController rankingDBController;
+    private TextView personOfTheWeek;
+    private RatingBar ratingBar;
     private DatabaseReference databaseReference;
+
     public PersonFragment() {
+
     }
 
     @Override
@@ -54,30 +56,15 @@ public class PersonFragment extends Fragment implements OnClickListener {
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child(Constant.RANKING).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        databaseReference.child(Constant.RANKING).addChildEventListener(new ChildEventListener() {
+        databaseReference.child(Constant.PEOPLE).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), "New: " + dataSnapshot.child(Constant.NAME).getValue()
-                        + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                    Toast.makeText(getActivity(), "Updated" + dataSnapshot.child(Constant.NAME).getValue()
-                            + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Updated" + dataSnapshot.child(Constant.NAME).getValue()
+                        + " " + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -103,10 +90,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
 
-           UserRating userRating = new UserRating(databaseReference.child(Constant.RANKING).push().getKey()
-                    ,personOfTheWeek.getText().toString(), ratingBar.getProgress());
-            userRating.incTotalTimesVoted();
-            databaseReference.child(Constant.RANKING).child(userRating.getId()).setValue(userRating);
+            databaseReference.child(Constant.PEOPLE).child(Constant.ID_ERNEST).child(Constant.RATE).setValue(ratingBar.getProgress());
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
