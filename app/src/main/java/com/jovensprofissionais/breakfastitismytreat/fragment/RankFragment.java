@@ -28,8 +28,6 @@ public class RankFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         databaseReference = FirebaseDatabase.getInstance().getReference();
-
-        databaseReference.child(Constant.RANKING_TABLE);
     }
 
     @Override

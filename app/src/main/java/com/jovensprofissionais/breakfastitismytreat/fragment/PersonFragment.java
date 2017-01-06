@@ -16,9 +16,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
+import com.google.firebase.database.ValueEventListener;
 import com.jovensprofissionais.breakfastitismytreat.R;
+import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.controller.RankingDBController;
+import com.jovensprofissionais.breakfastitismytreat.entity.UserRating;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,13 +29,13 @@ import com.jovensprofissionais.breakfastitismytreat.controller.RankingDBControll
  */
 public class PersonFragment extends Fragment implements OnClickListener {
 
-    public PersonFragment() {}
-
     Button voteButton;
     RankingDBController rankingDBController;
     TextView personOfTheWeek;
     RatingBar ratingBar;
     private DatabaseReference databaseReference;
+    public PersonFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,15 +54,30 @@ public class PersonFragment extends Fragment implements OnClickListener {
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
+        databaseReference.child(Constant.RANKING).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         databaseReference.child(Constant.RANKING).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), (String) dataSnapshot.child(Constant.NAME).getValue() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "New: " + dataSnapshot.child(Constant.NAME).getValue()
+                        + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
+                    Toast.makeText(getActivity(), "Updated" + dataSnapshot.child(Constant.NAME).getValue()
+                            + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -75,7 +92,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(getActivity(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -84,9 +101,12 @@ public class PersonFragment extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(ratingBar.getProgress() > 0) {
+        if (ratingBar.getProgress() > 0) {
 
-            databaseReference.child(Constant.RANKING).push().child(Constant.NAME).setValue(personOfTheWeek.getText().toString());
+           UserRating userRating = new UserRating(databaseReference.child(Constant.RANKING).push().getKey()
+                    ,personOfTheWeek.getText().toString(), ratingBar.getProgress());
+            userRating.incTotalTimesVoted();
+            databaseReference.child(Constant.RANKING).child(userRating.getId()).setValue(userRating);
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
