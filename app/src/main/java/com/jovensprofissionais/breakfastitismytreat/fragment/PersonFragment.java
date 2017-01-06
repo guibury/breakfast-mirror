@@ -11,6 +11,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
@@ -30,8 +33,7 @@ public class PersonFragment extends Fragment implements OnClickListener {
     RankingDBController rankingDBController;
     TextView personOfTheWeek;
     RatingBar ratingBar;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-
+    private DatabaseReference databaseReference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,15 +50,43 @@ public class PersonFragment extends Fragment implements OnClickListener {
         voteButton.setOnClickListener(this);
         personOfTheWeek = (TextView) rootView.findViewById(R.id.personOfTheWeek);
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        databaseReference.child("peps").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Toast.makeText(getActivity(), (String) dataSnapshot.child("name").getValue() , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         return rootView;
     }
 
     @Override
     public void onClick(View v) {
         if(ratingBar.getProgress() > 0) {
-            rankingDBController.insert(personOfTheWeek.getText().toString(),ratingBar.getProgress());
 
-            databaseReference.child(Constant.RANKING_TABLE).setValue(ratingBar.getProgress());
+            databaseReference.child("peps").push().child("name").setValue(personOfTheWeek.getText().toString());
 
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
