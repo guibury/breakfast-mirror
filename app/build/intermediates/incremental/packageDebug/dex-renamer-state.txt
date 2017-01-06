@@ -1,4 +1,4 @@
-#Fri Jan 06 10:04:48 BRST 2017
+#Fri Jan 06 10:54:39 BRST 2017
 base.0=/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f3df4eb69354c02427e62926b99ee990b70664a8
 renamed.1=classes.dex
 renamed.0=classes2.dex
