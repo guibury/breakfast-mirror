@@ -31,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private DatabaseReference mDatabase;
-//    Button voteButton;
-//    RankingDBController rankingDBController;
-//    TextView personOfTheWeek;
-//    RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-
-//      rankingDBController = new RankingDBController(getBaseContext());
-//      voteButton = (Button) findViewById(R.id.voteButton);
-//      personOfTheWeek = (TextView) findViewById(R.id.personOfTheWeek);
-//      ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-
-//      voteButton.setOnClickListener(voteHandler);
     }
 
 
@@ -103,16 +88,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    View.OnClickListener voteHandler = new OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            if(ratingBar.getProgress() > 0) {
-//                rankingDBController.insert(personOfTheWeek.getText().toString(),ratingBar.getProgress());
-//                Toast.makeText(MainActivity.this, R.string.realized_vote, Toast.LENGTH_SHORT).show();
-//            } else {
-//                Toast.makeText(MainActivity.this, R.string.not_realized_vote, Toast.LENGTH_LONG).show();
-//            }
-//
-//        }
-//    };
 }

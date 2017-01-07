@@ -20,7 +20,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.jovensprofissionais.breakfastitismytreat.R;
 import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.controller.RankingDBController;
-import com.jovensprofissionais.breakfastitismytreat.entity.UserRating;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,7 +32,11 @@ public class PersonFragment extends Fragment implements OnClickListener {
     private RankingDBController rankingDBController;
     private TextView personOfTheWeek;
     private RatingBar ratingBar;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databasePeople;
+    private DatabaseReference databasePersonOfTheWeek;
+    private DatabaseReference databaseWeekOfYear;
+
+    int p = -1;
 
     public PersonFragment() {
 
@@ -54,16 +57,20 @@ public class PersonFragment extends Fragment implements OnClickListener {
         voteButton.setOnClickListener(this);
         personOfTheWeek = (TextView) rootView.findViewById(R.id.personOfTheWeek);
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databasePeople = FirebaseDatabase.getInstance().getReference();
+        databasePersonOfTheWeek = FirebaseDatabase.getInstance().getReference();
+        databaseWeekOfYear = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child(Constant.PEOPLE).addChildEventListener(new ChildEventListener() {
+        databasePeople.child(Constant.PEOPLE).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), "Updated" + dataSnapshot.child(Constant.NAME).getValue()
+
+                String i = dataSnapshot.getRef().child(Constant.PERSON_OF_THE_WEEK).getKey();
+                Toast.makeText(getActivity(), "Updated "+i + dataSnapshot.child(Constant.NAME).getValue()
                         + " " + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
@@ -83,13 +90,70 @@ public class PersonFragment extends Fragment implements OnClickListener {
             }
         });
 
+        databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Toast.makeText(getActivity(), "Person of the week:" + dataSnapshot.child(
+                        Constant.PERSON_OF_THE_WEEK).getValue(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Toast.makeText(getActivity(), "Person of the week: " + dataSnapshot.child(
+                        Constant.PERSON_OF_THE_WEEK).getValue(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        // With week of the year is set the person of the week  (person_week)
+        databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().child(Constant.PERSON_OF_THE_WEEK).setValue(dataSnapshot.getValue());
+                Toast.makeText(getActivity(), "->"+ dataSnapshot.getValue(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                personOfTheWeek.setText(""+dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         return rootView;
     }
 
     @Override
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
-            databaseReference.child(Constant.PEOPLE).child(Constant.ID_ERNEST).child(Constant.RATE).setValue(ratingBar.getProgress());
+            p = ((p+1) %12);
+            databasePeople.child(Constant.PEOPLE).child(Integer.toString(p)).child(Constant.RATE).setValue(ratingBar.getProgress());
+            databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).setValue(p);
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.not_realized_vote, Toast.LENGTH_LONG).show();

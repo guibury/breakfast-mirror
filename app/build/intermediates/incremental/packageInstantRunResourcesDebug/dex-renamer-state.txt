@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-#Fri Jan 06 19:21:38 BRST 2017
-=======
-#Fri Jan 06 10:54:36 BRST 2017
->>>>>>> 220ef47ff7168a1b7e3f9727d3119b7fc1090be9
+#Fri Jan 06 19:53:43 BRST 2017
