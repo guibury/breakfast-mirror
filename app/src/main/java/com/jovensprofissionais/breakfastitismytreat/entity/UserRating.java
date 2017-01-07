@@ -1,5 +1,10 @@
 package com.jovensprofissionais.breakfastitismytreat.entity;
 
+/**
+ * Created with Eclipse IDE.
+ * User: Thiago Osiro
+ * Date: 06/01/16
+ */
 
 public class UserRating {
 

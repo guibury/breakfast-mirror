@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/bury/git/breakfast-mirror/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/bury/git/breakfast-mirror/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/bury/AndroidStudioProjects/breakfast-mirror/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/home/bury/AndroidStudioProjects/breakfast-mirror/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }

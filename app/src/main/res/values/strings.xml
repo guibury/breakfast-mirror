@@ -3,10 +3,23 @@
     <string name="person_of_the_next_week_title">Próximo a trazer:</string>
     <string name="person_of_the_next_week">Thales</string>
     <string name="person_of_the_week_title">Pessoa da semana:</string>
-    <string name="person_of_the_week">Gustavo</string>
     <string name="text_to_button_view">Votar</string>
     <string name="realized_vote">Voto realizado com sucesso</string>
     <string name="not_realized_vote">Por favor, selecione um número de estrelas para votar</string>
+
+    <string name="person_of_the_week">Person</string>
+    <string name="ernesto">Ernesto</string>
+    <string name="gabriel">Gabriel</string>
+    <string name="guilherme">Guilherme</string>
+    <string name="gustavo">Gustavo</string>
+    <string name="hivison">Hivison</string>
+    <string name="leonardo">Leonardo</string>
+    <string name="mateus">Mateus</string>
+    <string name="matheus">Matheus</string>
+    <string name="tassia">Tassia</string>
+    <string name="thales">Thales</string>
+    <string name="thiago">Thiago</string>
+    <string name="wendler">Wendler</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

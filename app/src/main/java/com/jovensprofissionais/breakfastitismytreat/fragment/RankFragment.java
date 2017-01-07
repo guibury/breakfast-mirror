@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.jovensprofissionais.breakfastitismytreat.constant.Constant;
 import com.jovensprofissionais.breakfastitismytreat.R;
 
 /**
@@ -16,6 +15,7 @@ import com.jovensprofissionais.breakfastitismytreat.R;
  * User: Guilherme Bury
  * Date: 02/01/17
  */
+
 public class RankFragment extends Fragment{
 
     private DatabaseReference databaseReference;
