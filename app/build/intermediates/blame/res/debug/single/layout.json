@@ -24,12 +24,12 @@
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item.xml"
-    },
-    {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
+        "source": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item.xml"
     },
     {
         "merged": "/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",

@@ -39,7 +39,7 @@
         android:textColor="@color/colorPrimary"
          android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/person_of_the_week"
+        android:text="@string/loading_person_of_the_week"
          android:layout_below="@+id/personOfTheWeekTitle"
          android:layout_centerHorizontal="true"
          android:layout_marginTop="32dp" />

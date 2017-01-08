@@ -3,39 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.4.0_e8c27567d36613471efa2faff47bdb33c0098281/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
         <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_6c6bc9298adc1d9635a890bef3282d89b7f0e820/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.4.0_d33f3d6d7921cf1a193f79ae2dafa18b86616f7b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2e6c38d87402ed7781e014574013d0ecc9cb7bab/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,48 +39,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="73e451c47c4f0d89733f84dc681ce730a0838a95">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f570d428e8d730709e5eee23b3d31325017e1a74/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ff79b966e7785aaaac6fe43d3f7ad8967c1902a4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="cfbd0c33e5e795f2f30857ae8e2f115dc94f73ec">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c078998380eb00f43d53dca72c4a2e7f6a90fd73/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
         <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_52439543916eb3090c40130edd7821bc0dff26db/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.4.0_1a728b8c08a58a76e7112acb1b8bb12de8ce5c5b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -120,15 +57,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_dba13a1cb90efcda1599f8de98b8fc847fdaaf2d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -138,39 +66,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_61f792c6bcfacab36a8674cc836e91e1e659fc35/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2740e04cfa73c2f255f1899f4acab4d769fa738f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
         <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_7b6768e6b5d3dc2277034a48d51c83b4b048e4bb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a6518776778fb6cb45306ba946d51a08bb4e28e6/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -201,15 +102,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.4.0_61e8ad689d6c1139bd870b3efa72e79146c28940/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -219,21 +111,129 @@
     </item>
     <item
         is-multidex="true"
-        jar="/opt/Android-SDK/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_3dc11b7fe7fc2b247d673c5ebdfb333644b863ac/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
         <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.4.0_a3f82d201a3eb2c1cd22b9a190b614fdb8189526/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.4.0_e8c27567d36613471efa2faff47bdb33c0098281/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.4.0_d33f3d6d7921cf1a193f79ae2dafa18b86616f7b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2e6c38d87402ed7781e014574013d0ecc9cb7bab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9e06d8c62f4a67a4af59c5799c7d4e1370954b9f">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f570d428e8d730709e5eee23b3d31325017e1a74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ff79b966e7785aaaac6fe43d3f7ad8967c1902a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d6a32b0e795c47b3ab2e489d520c009977ff2242">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c078998380eb00f43d53dca72c4a2e7f6a90fd73/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.4.0_1a728b8c08a58a76e7112acb1b8bb12de8ce5c5b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_dba13a1cb90efcda1599f8de98b8fc847fdaaf2d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_61f792c6bcfacab36a8674cc836e91e1e659fc35/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2740e04cfa73c2f255f1899f4acab4d769fa738f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a6518776778fb6cb45306ba946d51a08bb4e28e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.4.0_61e8ad689d6c1139bd870b3efa72e79146c28940/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/opt/Android-SDK/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_3dc11b7fe7fc2b247d673c5ebdfb333644b863ac/classes.dex" />
     </item>
     <item
         is-multidex="true"

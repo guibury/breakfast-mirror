@@ -1,4 +1,4 @@
-#Fri Jan 06 21:56:28 BRST 2017
+#Sun Jan 08 20:55:18 BRST 2017
 base.0=/home/defteros/AndroidStudioProjects/BreakfastMirror/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f570d428e8d730709e5eee23b3d31325017e1a74
 renamed.1=classes.dex
 renamed.0=classes2.dex

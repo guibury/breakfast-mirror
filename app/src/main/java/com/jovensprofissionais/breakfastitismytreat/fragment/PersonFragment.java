@@ -1,7 +1,10 @@
 package com.jovensprofissionais.breakfastitismytreat.fragment;
 
+
 import android.os.Bundle;
+import java.util.Calendar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,7 +39,14 @@ public class PersonFragment extends Fragment implements OnClickListener {
     private DatabaseReference databasePersonOfTheWeek;
     private DatabaseReference databaseWeekOfYear;
 
-    int p = -1;
+    /* Variables related to Json files on server */
+    private int personWeekId;
+    private int weekOfYear;
+    private int currTotal5StarVotes;
+    private int currTotal4StarVotes;
+    private int currTotal3StarVotes;
+    private int currTotal2StarVotes;
+    private int currTotal1StarVotes;
 
     public PersonFragment() {
 
@@ -61,6 +71,52 @@ public class PersonFragment extends Fragment implements OnClickListener {
         databasePersonOfTheWeek = FirebaseDatabase.getInstance().getReference();
         databaseWeekOfYear = FirebaseDatabase.getInstance().getReference();
 
+        // With week of the year is set the person of the week  (person_week)
+        /*databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                weekOfYear = Integer.parseInt(dataSnapshot.getValue().toString());
+                int updatedWeekOfYear = WeekOfYear();
+
+                Log.i("PERSONFRAG","weekOfYear on server " + weekOfYear);
+                Log.i("PERSONFRAG","weekOfYear on calendar " + updatedWeekOfYear);
+                // Verify if JSon is update with the latest week of the year, if not then update server
+                if (weekOfYear < updatedWeekOfYear){
+                    databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).setValue(updatedWeekOfYear);
+                }
+
+                // Calculate the current person of the week using a circular buffer
+                personWeekId = (updatedWeekOfYear % Constant.TOTAL_PEOPLE);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/
+
+        Log.i("PERSONFRAG","weekOfYear on calendar " + getWeekOfYear());
+        personWeekId = getWeekOfYear();
+
+        // Getting all information of the person of the week(such as total times voted, rate not needed because its calculate each time it occurs a vote) for later calculations
+        databasePeople.child(Constant.PEOPLE).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                personOfTheWeek.setText(""+dataSnapshot.child(""+ personWeekId).child(Constant.NAME).getValue());
+                currTotal5StarVotes = Integer.parseInt(dataSnapshot.child(""+ personWeekId).child(Constant.TOTAL_5_STARS_VOTE).getValue().toString());
+                currTotal4StarVotes = Integer.parseInt(dataSnapshot.child(""+ personWeekId).child(Constant.TOTAL_4_STARS_VOTE).getValue().toString());
+                currTotal3StarVotes = Integer.parseInt(dataSnapshot.child(""+ personWeekId).child(Constant.TOTAL_3_STARS_VOTE).getValue().toString());
+                currTotal2StarVotes = Integer.parseInt(dataSnapshot.child(""+ personWeekId).child(Constant.TOTAL_2_STARS_VOTE).getValue().toString());
+                currTotal1StarVotes = Integer.parseInt(dataSnapshot.child(""+ personWeekId).child(Constant.TOTAL_1_STARS_VOTE).getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        // Listener for the People JSON
         databasePeople.child(Constant.PEOPLE).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -68,10 +124,9 @@ public class PersonFragment extends Fragment implements OnClickListener {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
                 String i = dataSnapshot.getRef().child(Constant.PERSON_OF_THE_WEEK).getKey();
                 Toast.makeText(getActivity(), "Updated "+i + dataSnapshot.child(Constant.NAME).getValue()
-                        + " " + dataSnapshot.child(Constant.RATE).getValue(), Toast.LENGTH_SHORT).show();
+                        + " " + dataSnapshot.child(Constant.RATE_AVERAGE).getValue(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -90,70 +145,62 @@ public class PersonFragment extends Fragment implements OnClickListener {
             }
         });
 
-        databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), "Person of the week:" + dataSnapshot.child(
-                        Constant.PERSON_OF_THE_WEEK).getValue(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(getActivity(), "Person of the week: " + dataSnapshot.child(
-                        Constant.PERSON_OF_THE_WEEK).getValue(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        // With week of the year is set the person of the week  (person_week)
-        databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                dataSnapshot.getRef().child(Constant.PERSON_OF_THE_WEEK).setValue(dataSnapshot.getValue());
-                Toast.makeText(getActivity(), "->"+ dataSnapshot.getValue(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                personOfTheWeek.setText(""+dataSnapshot.getValue());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
         return rootView;
+    }
+
+    private int getWeekOfYear() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.WEEK_OF_YEAR);
+    }
+
+    private int calculateAverageRating(){
+
+        int averageRate;
+
+        averageRate = (Constant.FIVE_STARS * currTotal5StarVotes + Constant.FOUR_STARS * currTotal4StarVotes
+         + Constant.THREE_STARS * currTotal3StarVotes + Constant.TWO_STARS * currTotal2StarVotes
+         + Constant.ONE_STAR * currTotal1StarVotes) / (currTotal5StarVotes + currTotal4StarVotes
+         + currTotal3StarVotes + currTotal2StarVotes + currTotal1StarVotes);
+
+        return averageRate;
+    }
+
+    private void countVote(int vote){
+        switch(vote){
+            case 5:{
+                currTotal5StarVotes ++;
+                databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.TOTAL_5_STARS_VOTE).setValue(currTotal5StarVotes);
+                break;
+            }
+            case 4:{
+                currTotal4StarVotes ++;
+                databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.TOTAL_4_STARS_VOTE).setValue(currTotal4StarVotes);
+                break;
+            }
+            case 3:{
+                currTotal3StarVotes ++;
+                databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.TOTAL_3_STARS_VOTE).setValue(currTotal3StarVotes);
+                break;
+            }
+            case 2:{
+                currTotal2StarVotes ++;
+                databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.TOTAL_2_STARS_VOTE).setValue(currTotal2StarVotes);
+                break;
+            }
+            case 1:{
+                currTotal1StarVotes ++;
+                databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.TOTAL_1_STARS_VOTE).setValue(currTotal1StarVotes);
+                break;
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
-            p = ((p+1) %12);
-            databasePeople.child(Constant.PEOPLE).child(Integer.toString(p)).child(Constant.RATE).setValue(ratingBar.getProgress());
-            databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).setValue(p);
+            countVote(ratingBar.getProgress());
+            databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.RATE_AVERAGE).setValue(calculateAverageRating());
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.not_realized_vote, Toast.LENGTH_LONG).show();
