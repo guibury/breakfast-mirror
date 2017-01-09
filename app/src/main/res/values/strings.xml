@@ -7,7 +7,7 @@
     <string name="realized_vote">Voto realizado com sucesso</string>
     <string name="not_realized_vote">Por favor, selecione um número de estrelas para votar</string>
 
-    <string name="person_of_the_week">Person</string>
+    <string name="loading_person_of_the_week">Loadin Person</string>
     <string name="ernesto">Ernesto</string>
     <string name="gabriel">Gabriel</string>
     <string name="guilherme">Guilherme</string>
