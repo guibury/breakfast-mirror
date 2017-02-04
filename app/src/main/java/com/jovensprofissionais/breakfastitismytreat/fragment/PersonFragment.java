@@ -1,5 +1,6 @@
 package com.jovensprofissionais.breakfastitismytreat.fragment;
 
+import android.media.MediaPlayer;
 
 import android.os.Bundle;
 import java.util.Calendar;
@@ -39,6 +40,13 @@ public class PersonFragment extends Fragment implements OnClickListener {
     private DatabaseReference databasePersonOfTheWeek;
     private DatabaseReference databaseWeekOfYear;
 
+    MediaPlayer ratingBarOneStarSound;
+    MediaPlayer ratingBarTwoStarSound;
+    MediaPlayer ratingBarThreeStarSound;
+    MediaPlayer ratingBarFourStarSound;
+    MediaPlayer ratingBarFiveStarSound;
+
+    int p = -1;
     /* Variables related to Json files on server */
     private int personWeekId;
     private int weekOfYear;
@@ -66,7 +74,14 @@ public class PersonFragment extends Fragment implements OnClickListener {
         voteButton = (Button) rootView.findViewById(R.id.voteButton);
         voteButton.setOnClickListener(this);
         personOfTheWeek = (TextView) rootView.findViewById(R.id.personOfTheWeek);
+
         ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
+        ratingBarOneStarSound = MediaPlayer.create(getActivity(), R.raw.nosedive_1_star);
+        ratingBarTwoStarSound = MediaPlayer.create(getActivity(), R.raw.nosedive_2_stars);
+        ratingBarThreeStarSound = MediaPlayer.create(getActivity(), R.raw.nosedive_3_stars);
+        ratingBarFourStarSound = MediaPlayer.create(getActivity(), R.raw.nosedive_4_stars);
+        ratingBarFiveStarSound = MediaPlayer.create(getActivity(), R.raw.nosedive_5_stars);
+
         databasePeople = FirebaseDatabase.getInstance().getReference();
         databasePersonOfTheWeek = FirebaseDatabase.getInstance().getReference();
         databaseWeekOfYear = FirebaseDatabase.getInstance().getReference();
@@ -196,9 +211,28 @@ public class PersonFragment extends Fragment implements OnClickListener {
         }
     }
 
+
     @Override
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
+            //p = ((p+1) %12);
+            //databasePeople.child(Constant.PEOPLE).child(Integer.toString(p)).child(Constant.RATE).setValue(ratingBar.getProgress());
+            //databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).setValue(p);
+
+            countVote(ratingBar.getProgress());
+
+            if(ratingBar.getProgress() == 1) {
+                ratingBarOneStarSound.start();
+            } else if (ratingBar.getProgress() == 2) {
+                ratingBarTwoStarSound.start();
+            } else if (ratingBar.getProgress() == 3) {
+                ratingBarThreeStarSound.start();
+            } else if (ratingBar.getProgress() == 4) {
+                ratingBarFourStarSound.start();
+            } else if (ratingBar.getProgress() == 5) {
+                ratingBarFiveStarSound.start();
+            }
+
             countVote(ratingBar.getProgress());
             databasePeople.child(Constant.PEOPLE).child(""+ personWeekId).child(Constant.RATE_AVERAGE).setValue(calculateAverageRating());
             Toast.makeText(getActivity(), R.string.realized_vote, Toast.LENGTH_SHORT).show();

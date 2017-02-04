@@ -13,8 +13,8 @@ public class PersonController {
 
     public int changePersonEveryWeek() {
         Calendar week = Calendar.getInstance();
-        int weekOfTheYearInNumber = week.get (Calendar.WEEK_OF_YEAR);
-        return weekOfTheYearInNumber;
+        int weekOfTheYearIntNumber = week.get (Calendar.WEEK_OF_YEAR);
+        return weekOfTheYearIntNumber;
     }
 
 //    public Boolean changePersonEverySunday() {
