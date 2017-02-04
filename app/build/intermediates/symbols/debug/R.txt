@@ -755,7 +755,6 @@ int id beginning 0x7f0d0034
 int id bottom 0x7f0d0022
 int id buttonPanel 0x7f0d004e
 int id cancel_action 0x7f0d0089
-int id card_view 0x7f0d0087
 int id center 0x7f0d0023
 int id center_horizontal 0x7f0d0024
 int id center_vertical 0x7f0d0025
@@ -820,6 +819,7 @@ int id pin 0x7f0d002d
 int id progress_circular 0x7f0d0006
 int id progress_horizontal 0x7f0d0007
 int id radio 0x7f0d005e
+int id rankingTableLayout 0x7f0d0087
 int id ratingBar 0x7f0d0084
 int id right 0x7f0d0029
 int id screen 0x7f0d001c

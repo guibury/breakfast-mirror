@@ -2855,7 +2855,6 @@ containing a value of this type.
         public static final int bottom=0x7f0d0022;
         public static final int buttonPanel=0x7f0d004e;
         public static final int cancel_action=0x7f0d0089;
-        public static final int card_view=0x7f0d0087;
         public static final int center=0x7f0d0023;
         public static final int center_horizontal=0x7f0d0024;
         public static final int center_vertical=0x7f0d0025;
@@ -2920,6 +2919,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f0d0006;
         public static final int progress_horizontal=0x7f0d0007;
         public static final int radio=0x7f0d005e;
+        public static final int rankingTableLayout=0x7f0d0087;
         public static final int ratingBar=0x7f0d0084;
         public static final int right=0x7f0d0029;
         public static final int screen=0x7f0d001c;

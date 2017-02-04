@@ -46,10 +46,8 @@ public class PersonFragment extends Fragment implements OnClickListener {
     MediaPlayer ratingBarFourStarSound;
     MediaPlayer ratingBarFiveStarSound;
 
-    int p = -1;
     /* Variables related to Json files on server */
     private int personWeekId;
-    private int weekOfYear;
     private int currTotal5StarVotes;
     private int currTotal4StarVotes;
     private int currTotal3StarVotes;
@@ -86,34 +84,10 @@ public class PersonFragment extends Fragment implements OnClickListener {
         databasePersonOfTheWeek = FirebaseDatabase.getInstance().getReference();
         databaseWeekOfYear = FirebaseDatabase.getInstance().getReference();
 
-        // With week of the year is set the person of the week  (person_week)
-        /*databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                weekOfYear = Integer.parseInt(dataSnapshot.getValue().toString());
-                int updatedWeekOfYear = WeekOfYear();
-
-                Log.i("PERSONFRAG","weekOfYear on server " + weekOfYear);
-                Log.i("PERSONFRAG","weekOfYear on calendar " + updatedWeekOfYear);
-                // Verify if JSon is update with the latest week of the year, if not then update server
-                if (weekOfYear < updatedWeekOfYear){
-                    databaseWeekOfYear.child(Constant.WEEK_OF_THE_YEAR).setValue(updatedWeekOfYear);
-                }
-
-                // Calculate the current person of the week using a circular buffer
-                personWeekId = (updatedWeekOfYear % Constant.TOTAL_PEOPLE);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
-
         Log.i("PERSONFRAG","weekOfYear on calendar " + getWeekOfYear());
         personWeekId = getWeekOfYear();
 
-        // Getting all information of the person of the week(such as total times voted, rate not needed because its calculate each time it occurs a vote) for later calculations
+        // Getting all information of the person of the week(such as total times voted, rate not needed because it is calculated each time it occurs a vote) for later calculations
         databasePeople.child(Constant.PEOPLE).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -159,8 +133,6 @@ public class PersonFragment extends Fragment implements OnClickListener {
                 Toast.makeText(getActivity(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
         return rootView;
     }
 
@@ -215,11 +187,6 @@ public class PersonFragment extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         if (ratingBar.getProgress() > 0) {
-            //p = ((p+1) %12);
-            //databasePeople.child(Constant.PEOPLE).child(Integer.toString(p)).child(Constant.RATE).setValue(ratingBar.getProgress());
-            //databasePersonOfTheWeek.child(Constant.PERSON_OF_THE_WEEK).setValue(p);
-
-            countVote(ratingBar.getProgress());
 
             if(ratingBar.getProgress() == 1) {
                 ratingBarOneStarSound.start();
