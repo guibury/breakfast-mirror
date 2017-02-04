@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BreakfastItismytreat.iml" filepath="$PROJECT_DIR$/BreakfastItismytreat.iml" />
       <module fileurl="file://$PROJECT_DIR$/BreakfastMirror.iml" filepath="$PROJECT_DIR$/BreakfastMirror.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
